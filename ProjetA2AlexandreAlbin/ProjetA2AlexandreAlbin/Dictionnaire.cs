@@ -8,5 +8,6 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Dictionnaire
     {
+
     }
 }
