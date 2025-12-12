@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,6 @@ namespace ProjetA2AlexandreAlbin
         char[,] matrice;
         int lignes;
         int colones;
-        //Dictionary<char, Lettre> lettresInfo; Revoir ca avec le txt
 
         public char[,] Matrice
         {
@@ -32,6 +32,44 @@ namespace ProjetA2AlexandreAlbin
         {
             this.lignes = ligne;
             this.colones = colone;
+            this.matrice = tableau(ligne, colone);
+            //On créer le tableau pour le mettre directement dans le constructeur
+
+            
+        }
+
+        private char[,] tableau(int ligne, int colone)
+        {
+            char[,] mat = null;
+            if (ligne != 0 && colone != 0)
+            {
+                Random r = new Random(32);
+                int dim = ligne * colone;
+                mat = new char[ligne, colone];
+                bool verif;
+                for (int i = 0; i < ligne; i++)
+                {
+                    for (int j = 0; j < colone; j++)
+                    {
+                        verif = false;
+                        while (!verif)
+                        {
+                            int a = r.Next(1, 26);
+                            
+                            if (LetterInformations.Lettres[a].Count <= LetterInformations.Lettres[a].Occurence)
+                            {
+                                mat[i, j] = Convert.ToChar(a + 64);
+                                LetterInformations.Lettres[a].Count++;
+                                verif = true; ;
+                            }
+                            
+                        }
+                    }
+                }
+                
+            }
+            return mat;
+
         }
 
 
@@ -41,65 +79,6 @@ namespace ProjetA2AlexandreAlbin
         //{
         //    // Retourne le plateau en formant entier 
         //}
-
-
-
-
-
-        //Utiliser File donc refaire
-
-
-
-
-        public void ToFile(string nomfile)
-        {
-            int count = 0;
-            //private StreamReader st = new StreamReader(@$"C:\Users\albin\Documents\Esilv A1\C#\{nomfile}.txt"); //Lettre 
-
-        }
-        public void SeparerEnListes(string cheminFichier, int longeur, int largeur)//Pour avoir plusieurs colones séparés
-        {
-            List<string> lettres = new List<string>();
-            List<int> occurence = new List<int>();
-            List<int> poids = new List<int>();
-
-            using (StreamReader sr = new StreamReader(cheminFichier))
-            {
-                string ligne;
-                while ((ligne = sr.ReadLine()) != null)
-                {
-                    string[] elements = ligne.Split(',');
-
-                    if (elements.Length >= 3)
-                    {
-                        lettres.Add(elements[0]);
-                        occurence.Add(int.Parse(elements[1]));
-                        poids.Add(int.Parse(elements[2]));
-                    }
-                }
-            }
-
-            Random r = new Random();
-            int count = 0;
-            int dim = longeur * largeur;
-            string[,] mat = new string[longeur, largeur];
-            while (count != dim)
-            {
-                for (int i = 0; i <= dim; i++)
-                {
-                    for (int j = 0; j <= largeur; j++)
-                    {
-                        int pick = r.Next(1, 26);
-                        if (occurence[pick] > 0)
-                        {
-                            mat[i, j] = lettres[pick];
-                        }
-                    }
-                }
-            }
-        }
-
-
     }
 }
 

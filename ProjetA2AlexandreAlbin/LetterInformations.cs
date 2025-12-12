@@ -16,6 +16,8 @@ namespace ProjetA2AlexandreAlbin
         public int Occurence { get; }
         public int Poids { get; }
 
+        public int Count { get; set; }
+
 
         //definition d'un constructeur
         public LetterInformations(char letter, int occurence, int poids)
@@ -23,6 +25,7 @@ namespace ProjetA2AlexandreAlbin
             Letter = letter;
             Occurence = occurence;
             Poids = poids;
+            Count = 0;
         }
 
         #endregion
@@ -38,8 +41,9 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
-         /*
-        #region Création de la liste Lettre
+
+        #region Création de la liste Lettre  ( optionnelle )
+        /*
         public static List<LetterInformations> Lettres = new List<LetterInformations>() ;
         
         public static void creationTab()
@@ -61,12 +65,12 @@ namespace ProjetA2AlexandreAlbin
             }
             else Console.WriteLine("No path");
         }
-
+        
+        */
         #endregion
 
-        */
 
-        
+
         #region Création de la tab Lettres
         public static LetterInformations[] Lettres = new LetterInformations[26];
         public static void creationTab()
