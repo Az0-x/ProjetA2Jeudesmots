@@ -34,14 +34,11 @@ namespace ProjetA2AlexandreAlbin
         
         public override string ToString()
         {
-
-
-            return Letter + " , " + Occurence + " , " + " , " + Poids;
+            return Letter + "," + Occurence + "," + Poids;
         }
 
 
-
-        
+         /*
         #region Création de la liste Lettre
         public static List<LetterInformations> Lettres = new List<LetterInformations>() ;
         
@@ -51,33 +48,50 @@ namespace ProjetA2AlexandreAlbin
             {
                 foreach(string subline in File.ReadLines(path))
                 {
-                    subline.Split(',');
-                    char letters = subline[0];
-                    int occurs = Convert.ToInt32(subline[1]);
-                    int wheigt = Convert.ToInt32(subline[2]);
-
-                    Lettres.Add(new LetterInformations(letters, occurs, wheigt));
+                    string[] part = subline.Split(',');
+                    if (part.Length <= 3)
+                    {
+                        char letters = Convert.ToChar(part[0]);
+                        int occurs = Convert.ToInt32(part[1]);
+                        int wheigt = Convert.ToInt32(part[2]);
+                        Lettres.Add(new LetterInformations(letters, occurs, wheigt));
+                    }
+                    else Console.WriteLine("Erreur dans le fichier Lettre.txt");
                 } 
             }
             else Console.WriteLine("No path");
         }
 
+        #endregion
 
+        */
 
         
-
-          
-
-
-
-        #endregion
-
-        /*
         #region Création de la tab Lettres
         public static LetterInformations[] Lettres = new LetterInformations[26];
-
+        public static void creationTab()
+        {
+            if (File.Exists(path))
+            {
+                int i = 0;
+                foreach(string subline in File.ReadLines(path))
+                {
+                    string[] part = subline.Split(',');
+                    if (part.Length <= 3)
+                    {
+                        char letters = Convert.ToChar(part[0]);
+                        int occurs = Convert.ToInt32(part[1]);
+                        int wheigt = Convert.ToInt32(part[2]);
+                        Lettres[i] = new LetterInformations(letters, occurs, wheigt);
+                        i++;
+                    }
+                    else Console.WriteLine("Erreur dans le fichier Lettre.txt");
+                } 
+            }
+            else Console.WriteLine("No path");
+        }
 
         #endregion
-        */
+        
     }
 }
