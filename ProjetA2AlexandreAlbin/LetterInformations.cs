@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProjetA2AlexandreAlbin
+{
+    internal struct LetterInformations
+    {
+        #region def de la classe
+
+        //Creation des éléments de la structures
+        public char Letter { get; }
+        public int Occurence { get; }
+        public int Poids { get; }
+
+
+        //definition d'un constructeur
+        public LetterInformations(char letter, int occurence, int poids)
+        {
+            Letter = letter; 
+            Occurence = occurence; 
+            Poids = poids;
+        }
+
+        #endregion
+
+
+
+        //On peut faire soit un tab ( il y a 26 lettres donc fixe ou une Liste, le choix dépend de la tournure du jeux si on veut ajouter des caractéres ou autres )
+        string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
+        #region Création de la liste Lettre
+        public static List<LetterInformations> Lettres;
+        
+        
+
+          
+
+
+
+        #endregion
+
+        /*
+        #region Création de la tab Lettres
+        public static LetterInformations[] Lettres = new LetterInformations[26];
+
+
+        #endregion
+        */
+    }
+}

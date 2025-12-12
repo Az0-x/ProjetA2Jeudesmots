@@ -8,6 +8,6 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Dictionnaire
     {
-
+        // Aller dans mots Francais.text, extraire et faire un tableau de List, tous trié pour la compraraison
     }
 }
