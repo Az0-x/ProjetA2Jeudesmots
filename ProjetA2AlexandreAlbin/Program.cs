@@ -4,6 +4,14 @@
     {
         static void Main(string[] args)
         {
+            LetterInformations.creationTab();
+            Test();
+
+
+            string repertoireActuel = Directory.GetCurrentDirectory();
+            
+            System.Console.WriteLine("Le chemin RELATIF commence à : " + repertoireActuel);
+
             Console.WriteLine("Press any key to continue!");
             Console.ReadKey();
         }
@@ -32,6 +40,14 @@
         static void Interface()
         {
 
+        }
+
+        static void Test()
+        {
+            foreach(LetterInformations a in LetterInformations.Lettres)
+            {
+                Console.WriteLine(a);
+            }
         }
     }
 }

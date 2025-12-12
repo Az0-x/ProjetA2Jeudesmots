@@ -3,32 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\dictionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\dictionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\letterinformations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\letterinformations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\methode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\methode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\jeu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\jeu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\plateau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\plateau.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\dictionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\dictionnaire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\joueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\joueur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|c:\\users\\alexa\\source\\repos\\a2\\poo\\projeta2jeudesmots\\projeta2alexandrealbin\\methode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95FBDDE4-C246-3D96-1C57-A403E60E306E}|ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj|solutionrelative:projeta2alexandrealbin\\methode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +26,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Dictionnaire.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Dictionnaire.cs",
+              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Dictionnaire.cs",
+              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Dictionnaire.cs",
+              "RelativeToolTip": "ProjetA2AlexandreAlbin\\Dictionnaire.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:50:01.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "LetterInformations.cs",
+              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\LetterInformations.cs",
+              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\LetterInformations.cs",
+              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\LetterInformations.cs",
+              "RelativeToolTip": "ProjetA2AlexandreAlbin\\LetterInformations.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACAAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:09:03.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Methode.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Methode.cs",
               "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Methode.cs",
@@ -50,80 +64,21 @@
               "RelativeToolTip": "ProjetA2AlexandreAlbin\\Methode.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAowBoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T09:42:57.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LetterInformations.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\LetterInformations.cs",
-              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\LetterInformations.cs",
-              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\LetterInformations.cs",
-              "RelativeToolTip": "ProjetA2AlexandreAlbin\\LetterInformations.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T09:42:00.616Z",
+              "WhenOpened": "2025-12-12T09:42:57.111Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Jeu.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Jeu.cs",
-              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Jeu.cs",
-              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Jeu.cs",
-              "RelativeToolTip": "ProjetA2AlexandreAlbin\\Jeu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T09:07:55.822Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Plateau.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Plateau.cs",
-              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Plateau.cs",
-              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Plateau.cs",
-              "RelativeToolTip": "ProjetA2AlexandreAlbin\\Plateau.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T09:07:32.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Dictionnaire.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Dictionnaire.cs",
-              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Dictionnaire.cs",
-              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Dictionnaire.cs",
-              "RelativeToolTip": "ProjetA2AlexandreAlbin\\Dictionnaire.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T09:07:06.103Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Joueur.cs",
-              "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Joueur.cs",
-              "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Joueur.cs",
-              "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Joueur.cs",
-              "RelativeToolTip": "ProjetA2AlexandreAlbin\\Joueur.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T09:06:34.342Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Program.cs",
               "RelativeDocumentMoniker": "ProjetA2AlexandreAlbin\\Program.cs",
               "ToolTip": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\Program.cs",
               "RelativeToolTip": "ProjetA2AlexandreAlbin\\Program.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBwAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T09:05:31.905Z"
+              "WhenOpened": "2025-12-08T09:05:31.905Z",
+              "EditorCaption": ""
             }
           ]
         }

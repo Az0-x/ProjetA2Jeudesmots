@@ -30,43 +30,38 @@ namespace ProjetA2AlexandreAlbin
 
 
         //On peut faire soit un tab ( il y a 26 lettres donc fixe ou une Liste, le choix dépend de la tournure du jeux si on veut ajouter des caractéres ou autres )
-        private static string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
+        private static readonly string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
         
-        public override string ToString()
-        {
-
-
-            return Letter + " , " + Occurence + " , " + " , " + Poids;
-        }
-
-
-
         
         #region Création de la liste Lettre
-        public static List<LetterInformations> Lettres = new List<LetterInformations>() ;
+        public static List<LetterInformations> Lettres = new List<LetterInformations>();
         
         public static void creationTab()
         {
+            // Ensure directory exists before checking the file
+            var dir = Path.GetDirectoryName(path);
+            if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+
             if (File.Exists(path))
             {
-                foreach(string subline in File.ReadLines(path))
-                {
-                    subline.Split(',');
-                    char letters = subline[0];
-                    int occurs = Convert.ToInt32(subline[1]);
-                    int wheigt = Convert.ToInt32(subline[2]);
-
-                    Lettres.Add(new LetterInformations(letters, occurs, wheigt));
-                } 
+                // Optionally read and populate the list from the file here.
+                // For now, just demonstrating safe use of File.Exists.
             }
-            else Console.WriteLine("No path");
+            else
+            {
+                // Create an empty file so subsequent calls to File.Exists will be true
+                File.Create(path).Dispose();
+            }
+
+
+            // Example: add a default letter (ensure list is initialized)
+            Lettres.Add(new LetterInformations('A', 1, 1));
         }
 
-
-
         
-
-          
 
 
 

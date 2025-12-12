@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace ProjetA2AlexandreAlbin
 {
@@ -30,39 +29,22 @@ namespace ProjetA2AlexandreAlbin
 
 
         //On peut faire soit un tab ( il y a 26 lettres donc fixe ou une Liste, le choix dépend de la tournure du jeux si on veut ajouter des caractéres ou autres )
-        private static string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
+        string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
         
-        public override string ToString()
-        {
-
-
-            return Letter + " , " + Occurence + " , " + " , " + Poids;
-        }
-
-
-
         
         #region Création de la liste Lettre
-        public static List<LetterInformations> Lettres = new List<LetterInformations>() ;
+        public static List<LetterInformations> Lettres;
         
         public static void creationTab()
         {
             if (File.Exists(path))
             {
-                foreach(string subline in File.ReadLines(path))
-                {
-                    subline.Split(',');
-                    char letters = subline[0];
-                    int occurs = Convert.ToInt32(subline[1]);
-                    int wheigt = Convert.ToInt32(subline[2]);
 
-                    Lettres.Add(new LetterInformations(letters, occurs, wheigt));
-                } 
             }
-            else Console.WriteLine("No path");
+
+
+            Lettres.Add(new LetterInformations('A', 1, 1));
         }
-
-
 
         
 
