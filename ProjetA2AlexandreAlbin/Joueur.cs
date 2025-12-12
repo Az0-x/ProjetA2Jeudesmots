@@ -13,7 +13,7 @@ namespace ProjetA2AlexandreAlbin
         int score;
         public Joueur(string Nom)
         {
-            if (Nom == null)// Refaire la boucle
+            if (Nom == null)// Refaire la boucle pour que la saisie soit plus sécurisée !!!
             {
                 Console.WriteLine("veuillez saisir votre nom à nouveau !!!");
             }
@@ -46,10 +46,26 @@ namespace ProjetA2AlexandreAlbin
             }
             return count;
         }
-        public bool Contient(string mot, string[] tab)// faire une liste oxiliaire ...
+
+        // Faut incrémenter le score du joueur et aussi voir si le mot est contenu dans les guess du joueur !!!
+        public void Add_Mot(string mot)
+        {
+            if (mot != null || Contient(mot) == false)// normalement on test dans un premier telmps si le repertoires est ok
+            {
+                Console.WriteLine("Le mot :" + mot + " est bien ajouté à la liste");
+                motsTrouvees.Add(mot);// On ajoute le mot à la liste des mots trouvés 
+            }
+        }
+
+
+        public bool Contient(string mot)// on regarde si le mot est bien dans la liste des mots trouvés 
         {
             bool present = false;
-            // Regarder si le mot trouve est contenu dans la liste 
+
+            if (motsTrouvees.Contains(mot) == true)
+            {
+                present = true;
+            }
             return present;
         }
 
