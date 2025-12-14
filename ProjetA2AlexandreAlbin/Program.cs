@@ -1,4 +1,6 @@
-﻿namespace ProjetA2AlexandreAlbin
+﻿using Projet_A2_S1;
+
+namespace ProjetA2AlexandreAlbin
 {
     internal class Program
     {
@@ -39,8 +41,14 @@
         static void Test()
         {
 
+            Dictionnaire dico = new Dictionnaire();
+            //Console.WriteLine(dico.Dict);
+            dico.AfficheDico();
+
+            /*
             Plateau map = new Plateau(8, 10);
             Methode.AfficherMatrice(map.Matrice);
+            */
 
             /*
             foreach (LetterInformations a in LetterInformations.Lettres)
