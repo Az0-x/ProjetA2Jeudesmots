@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetA2AlexandreAlbin;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -96,10 +97,7 @@ namespace Projet_A2_S1
 
         #region trie
 
-        //------------------------------------------------------------------------------//
-        //Pour buildfromtext, enlever certaines conditions, le fichier restera le mm 
-        //------------------------------------------------------------------------------//
-
+        
 
         /// <summary>
         /// Construit le dictionnaire depuis le TXT, trie et sauvegarde.
@@ -295,6 +293,8 @@ namespace Projet_A2_S1
                 Console.WriteLine();
             }
         }
+
+
 
         #endregion
 

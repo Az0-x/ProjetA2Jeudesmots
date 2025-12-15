@@ -9,9 +9,7 @@ namespace ProjetA2AlexandreAlbin
     internal class Methode
     {
 
-
-
-        public static void AfficherMatrice(char[,] matrice)  //on affiche la matrice
+        public static void AfficherMatrice<Tableauquelquonque>(Tableauquelquonque[,] matrice)  //on affiche la matrice
         {
             if (matrice == null) { Console.Write("(null)"); }
             else
@@ -25,7 +23,6 @@ namespace ProjetA2AlexandreAlbin
                         {
                             Console.Write(matrice[index, index2] + " ");
                         }
-                        Console.WriteLine();
                         Console.WriteLine();
                     }
                 }

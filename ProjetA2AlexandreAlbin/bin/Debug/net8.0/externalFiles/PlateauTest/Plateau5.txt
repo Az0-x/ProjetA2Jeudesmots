@@ -1,0 +1,8 @@
+X,R,T,Y,U,I,O,P
+B,Q,S,D,F,G,H,J
+K,L,M,W,X,C,V,E
+I,N,B,T,A,Z,E,E
+D,R,T,T,Y,U,I,L
+N,O,P,A,Q,S,D,U
+U,F,G,I,I,J,K,O
+T,A,H,C,X,V,B,P
