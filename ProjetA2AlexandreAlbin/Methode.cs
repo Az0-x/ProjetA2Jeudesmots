@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProjetA2AlexandreAlbin
 {
@@ -28,5 +29,31 @@ namespace ProjetA2AlexandreAlbin
                 }
             }
         }
+
+
+        public static string MotValide()
+        {
+            string mot;
+            do
+            {
+                Console.WriteLine("Entrez un mot :");
+                mot = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(mot));
+
+            return mot;
+        }
+
+        public static int ChiffreValide()
+        {
+            int nombre;
+            do
+            {
+                Console.WriteLine("Entrez un chiffre :");
+            } while (!int.TryParse(Console.ReadLine(), out nombre));
+
+            return nombre;
+        }
+
+
     }
 }

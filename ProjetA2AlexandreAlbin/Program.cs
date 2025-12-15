@@ -18,7 +18,10 @@ namespace ProjetA2AlexandreAlbin
             //Test();
             //Test1(dico);
             //Test2(dico, 3);
-            Test3(dico, 7);
+            //Test3(dico, 7);
+            Test4();//Test Interface 
+            //Pas mal 
+            //Interface();
 
 
             Console.WriteLine("Press any key to continue!");
@@ -46,7 +49,10 @@ namespace ProjetA2AlexandreAlbin
 
         static void Interface()
         {
-
+            char[,] c = new char[5, 5];
+            Jeu jeu = new Jeu();
+            jeu.Init();
+            jeu.Coups_Joueur(c);// Mettre l'alternance entre le joueur 1 et le joueur 2 
         }
 
 
@@ -183,6 +189,11 @@ namespace ProjetA2AlexandreAlbin
             
 
 
+        }
+
+        public static void Test4()
+        {
+            Jeu.PageAcceuil();
         }
 
         #endregion

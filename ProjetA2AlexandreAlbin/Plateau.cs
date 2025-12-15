@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Globalization;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -327,7 +328,27 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
-
+        public override string ToString()  //on affiche la matrice
+        {
+            string mat ="";
+            if (matrice == null) { Console.Write("(null)"); }
+            else
+            {
+                if (matrice.GetLength(0) == 0 || matrice.GetLength(1) == 0) { Console.Write("(vide)"); }
+                else
+                {
+                    for (int index = 0; index < matrice.GetLength(0); index++)
+                    {
+                        for (int index2 = 0; index2 < matrice.GetLength(1); index2++)
+                        {
+                            mat += matrice[index, index2] + " ";
+                        }
+                        mat += "\n";
+                    }
+                }
+            }
+            return mat;
+        }
 
 
 

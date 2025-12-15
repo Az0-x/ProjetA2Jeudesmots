@@ -27,3 +27,18 @@ C:\Users\alexa\source\repos\A2\POO\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin
 C:\Users\alexa\source\repos\A2\POO\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.pdb
 C:\Users\alexa\source\repos\A2\POO\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.genruntimeconfig.cache
 C:\Users\alexa\source\repos\A2\POO\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ref\ProjetA2AlexandreAlbin.dll
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.exe
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.deps.json
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.runtimeconfig.json
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.dll
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\bin\Debug\net8.0\ProjetA2AlexandreAlbin.pdb
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.AssemblyInfoInputs.cache
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.AssemblyInfo.cs
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.csproj.CoreCompileInputs.cache
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.sourcelink.json
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.dll
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\refint\ProjetA2AlexandreAlbin.dll
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.pdb
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ProjetA2AlexandreAlbin.genruntimeconfig.cache
+C:\Users\albin\Documents\Esilv A1\C#\ProjetA2Jeudesmots\ProjetA2AlexandreAlbin\obj\Debug\net8.0\ref\ProjetA2AlexandreAlbin.dll
