@@ -349,9 +349,6 @@ namespace ProjetA2AlexandreAlbin
             }
             return mat;
         }
-
-
-
     }
 }
 

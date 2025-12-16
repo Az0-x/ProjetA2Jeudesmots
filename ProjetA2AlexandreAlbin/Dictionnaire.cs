@@ -16,12 +16,14 @@ namespace Projet_A2_S1
         private static string pathmotsfrancais = Path.Combine(path, "Mots_Français.txt");
         private static string pathdicojson = Path.Combine(path, "Dictionary.json");
 
-        /// <summary>
-        /// Tableau de listes. 
-        /// L'index 0 correspond aux mots en 'A', l'index 1 aux mots en 'B', etc.
-        /// Taille fixe de 26 pour l'alphabet français standard.
-        /// </summary>
-        public List<string>[] Dict { get; private set; }
+       
+        private List<string>[] dict;
+
+        public List<string>[] Dict
+        {
+            get { return dict; }
+            private set { dict = value; }
+        }
 
 
         /// <summary>

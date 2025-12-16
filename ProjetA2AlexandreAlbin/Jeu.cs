@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Projet_A2_S1;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,22 +11,61 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Jeu
     {
-        static void Menu()
-        {
-            Jeu jeu = new Jeu();
-            jeu.Init();
-            
-            // créer matrice init
-            //jeu.Coups_Joueur();
+        private Dictionnaire dico;
+        private Joueur j1;
+        private Joueur j2;
+        private Plateau map;
+        private List<string> etatPartie;
+        private DateTime debutPartie;
+        private DateTime finTour;
 
-        }
-        public void Init()
-        {
-            //A voir si on fais une interface graphique ou autre, ou en tous cas pour la création de la partie et parametre, il y ai un choix avex les fleches plutot que ecrire tous les mots un a un
 
-            
-            PageAcceuil();
+
+        public Plateau Map
+        {
+            get { return map; }
+            set { map = value; }
         }
+
+        public Dictionnaire Dico
+        {
+            get { return dico; }
+            set { dico = value; }
+        }
+
+        public List<string> EtatPartie
+        {
+            get { return etatPartie; }
+            set { etatPartie = value; }
+        }
+
+        public Joueur J1
+        {
+            get { return j1; }
+            set { j1 = value; }
+        }
+
+        public Joueur J2
+        {
+            get { return j2; }
+            set { j2 = value; }
+        }
+
+
+        public Jeu(Dictionnaire dico, Joueur joueur1, Joueur joueur2, Plateau map) //Rajouter l'indice pour changer la valeur de la fin de la partie
+        {
+            this.dico = dico;
+            this.j1 = joueur1;
+            this.j2 = joueur2;
+            this.map = map;
+            this.etatPartie = new List<string>();
+            this.debutPartie = DateTime.Now;
+            this.finTour = debutPartie.AddMinutes(2);
+
+            etatPartie.Add(EtatActuellePartie(true));
+        }
+
+        /*
         public void Coups_Joueur(char[,] tab)// Faire une alternace afin cahger de joueur entre le 1 et le 2 !!!
         {
             Console.WriteLine("Veuillez saisir le temps total de la partie en minutes");
@@ -72,112 +112,129 @@ namespace ProjetA2AlexandreAlbin
                 }
             }
         }
-
+        */
         
         
-        // Check si le tableau contient toujours des lettres ou pas
-        static bool EtatJeu(char[,] tab)
+        
+
+        public bool EtatJeu()  //return true si la partie n'est pas terminer
         {
-            bool test = false;
-            if (tab.GetLength(0) != 0 && tab.GetLength(1) != 0)
+            bool verif = true;
+            if(DateTime.Now > finTour)
             {
-                test = true;
+                verif = false;
             }
-            return test;
+            return verif;
         }
 
 
-        #region Interface du jeu :
 
 
 
-        public static void PageAcceuil()
+        public string EtatActuellePartie(bool player)
+        {
+            if (player)
+            {
+                return map + "\n\n" + j1.Nom + " doit jouer";
+            }
+            else return map + "\n\n" + j2.Nom + " doit jouer";
+
+        }
+        public void SaveEtatPartie()
+        {
+            int nbr = 1;
+            string path = Path.Combine("externalFiles", "SavePartie", "SavePartie" + nbr + ".txt");
+            while (File.Exists(path))
+            {
+                nbr++;
+                path = Path.Combine("externalFiles", "SavePartie", "SavePartie" + nbr + ".txt");
+            }
+            string Partie="";
+            foreach(string round in etatPartie)
+            {
+                Partie += round;
+            }
+            Partie += "\n\n" + j1.toString() + "\n\n" + j2.toString;
+            File.WriteAllText(path, Partie);
+        }
+        public void Round()
         {
             Console.Clear();
-            Console.WriteLine("--------------------------------------------------------------------\n");
-            Console.WriteLine("            Bienvenue dans le jeu des Mots !!     ");
-            Console.WriteLine("\n--------------------------------------------------------------------\n\n\n\n");
-            Console.WriteLine("Mettre uin petit read me assez complet sur le jeu \n\n\n\n\n\n\n\n\n");
+            string word;
+            DateTime debutRound = DateTime.Now;
+            DateTime finRound = debutRound.AddSeconds(10);
+            bool verif = false;
 
-            Console.WriteLine("Pour continuer veuillez appuyer sur une touche ");
-            Console.ReadKey();
-            DeuxiemePage();
-        }
-
-        private static void DeuxiemePage()
-        {
-            Console.Clear();
-            Plateau map;
-            string path;
-            Console.WriteLine("--------------------------------------------------------------------\n");
-            Console.WriteLine("\n\n Voulez vous pour la grille :\n1.La chargé de notre base de grille enregistré ? \n2.La chargé via un de vos fichier ?\n3.La créer aléatoirement");
-
-            int var = Methode.ChiffreValide();
-
-            switch (var)
-            {
-                case 1:
-                    Console.Clear();
-                    Console.WriteLine("--------------------------------------------------------------------\n");
-                    Console.WriteLine("Mettez le nom de votre dossier :\n");
-                    string mot = Methode.MotValide();
-                    path = Path.Combine("externalFiles", mot);
-                    map = new Plateau(path);
-                    Console.WriteLine(map);
-
-
-                    break;
-                case 2:
-                    Console.Clear();
-                    Console.WriteLine("--------------------------------------------------------------------\n");
-                    Console.WriteLine("Quelle plateau voulez vous chargé ? ( de 1 à 7 )\n");
-                    int nbr = Methode.ChiffreValide();
-                    path = Path.Combine("externalFiles", "PlateauTest", "Plateau" + nbr + ".txt");
-                    map = new Plateau(path);
-                    Console.WriteLine(map);
-                    break;
-                case 3:
-                    Console.WriteLine("Combien de ligne voulez vous ?");
-                    int ligne = Methode.ChiffreValide();
-                    Console.WriteLine("Combien de colonne voulez vous ?");
-                    int colonne = Methode.ChiffreValide();
-
-                    map = new Plateau(ligne, colonne);
-                    Console.WriteLine(map);
-                    break;
-                default:
-                    DeuxiemePage();
-                    break;
-            }
-
-            InitialisationDesJoueurs();
-
-        }
-
-
-        private static void InitialisationDesJoueurs()
-        {
-            Console.WriteLine("Veuillez saisir le nom du premier joueur (joueur 1)");
-            string nom1 = Methode.MotValide();
-            Console.WriteLine("\n");
-            Console.WriteLine("Veuillez saisir le nom du second joueur (joueur 2)");
-            string nom2 = Methode.MotValide();
+            Methode.AfficherMatrice(Map.Matrice);
             Console.WriteLine("\n\n");
 
-            Joueur j1 = new Joueur(nom1);
-            Joueur j2 = new Joueur(nom2);
+            while (DateTime.Now < finRound && !verif)
+            {
+                
+                Console.WriteLine("Joueur 1 quelle mot choisis tu ?\n\n\nScore Actuelle : Joueur1 "+J1.Score +"  Joueur2 "+J2.Score);
+                word = Methode.MotValide();
+
+                if (Dico.FindWord(word))
+                {
+                    verif = Map.Recherche_Mot(word).verif;
+                    if (verif)
+                    {
+                        Map.Maj_Plateau(Map, word, Dico);
+                        J1.Add_Mot(word);
+                        J1.UpdateScore(word);
+                        Console.WriteLine(Map);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Le mot n'est pas dans la grille");
+                    }
+
+                }
+                else Console.WriteLine("Le mot n'est pas dans le dictionnaire");
+            }
+            etatPartie.Add(EtatActuellePartie(true));
 
 
-            Console.Clear();
-            Console.WriteLine("Infos saisies : ");
-            Console.WriteLine("j1 : " + j1.toString() + "     j2 : " + j2.toString());
-            Console.WriteLine("Appuyer sur entrée pour aller à l'étape suivante");
-            Console.ReadKey();
-            
+            RoundJ2();
         }
 
+        private void RoundJ2()
+        {
+            Console.Clear();
+            string word;
+            DateTime debutRound = DateTime.Now;
+            DateTime finRound = debutRound.AddSeconds(10);
+            bool verif = false;
 
+            Methode.AfficherMatrice(Map.Matrice);
+            Console.WriteLine("\n\n");
 
-        #endregion
+            while (DateTime.Now < finRound && !verif)
+            {
+
+                Console.WriteLine("Joueur 2 quelle mot choisis tu ?\n\n\nScore Actuelle : Joueur1 "+J1.Score +"  Joueur2 "+J2.Score);
+                word = Methode.MotValide();
+
+                if (Dico.FindWord(word))
+                {
+                    verif = Map.Recherche_Mot(word).verif;
+                    if (verif)
+                    {
+                        Map.Maj_Plateau(Map, word, Dico);
+                        J2.Add_Mot(word);
+                        J2.UpdateScore(word);
+                        Console.WriteLine(Map);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Le mot n'est pas dans la grille");
+                    }
+
+                }
+                else Console.WriteLine("Le mt n'est pas dans le dictionnaire");
+
+            }
+            etatPartie.Add(EtatActuellePartie(false));
+        }
     }
 }

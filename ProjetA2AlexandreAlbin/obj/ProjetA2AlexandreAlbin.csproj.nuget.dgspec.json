@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\albin\\Documents\\Esilv A1\\C#\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj": {}
+    "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\albin\\Documents\\Esilv A1\\C#\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj": {
+    "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\albin\\Documents\\Esilv A1\\C#\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj",
+        "projectUniqueName": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj",
         "projectName": "ProjetA2AlexandreAlbin",
-        "projectPath": "C:\\Users\\albin\\Documents\\Esilv A1\\C#\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj",
-        "packagesPath": "C:\\Users\\albin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\albin\\Documents\\Esilv A1\\C#\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\obj\\",
+        "projectPath": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\ProjetA2AlexandreAlbin.csproj",
+        "packagesPath": "C:\\Users\\alexa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\alexa\\source\\repos\\A2\\POO\\ProjetA2Jeudesmots\\ProjetA2AlexandreAlbin\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\albin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\alexa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

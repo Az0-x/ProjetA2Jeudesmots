@@ -47,13 +47,7 @@ namespace ProjetA2AlexandreAlbin
             //Lancement du jeux et des éléments
         }
 
-        static void Interface()
-        {
-            char[,] c = new char[5, 5];
-            Jeu jeu = new Jeu();
-            jeu.Init();
-            jeu.Coups_Joueur(c);// Mettre l'alternance entre le joueur 1 et le joueur 2 
-        }
+        
 
 
 
@@ -193,7 +187,7 @@ namespace ProjetA2AlexandreAlbin
 
         public static void Test4()
         {
-            Jeu.PageAcceuil();
+            Interface.PageAcceuil();
         }
 
         #endregion

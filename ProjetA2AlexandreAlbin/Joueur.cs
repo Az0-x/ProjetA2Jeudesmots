@@ -13,19 +13,14 @@ namespace ProjetA2AlexandreAlbin
         int score;
         public Joueur(string Nom)
         {
-            if (Nom == null)// Refaire la boucle pour que la saisie soit plus sécurisée !!!
-            {
-                Console.WriteLine("veuillez saisir votre nom à nouveau !!!");
-            }
             this.nom = Nom;
-            this.motsTrouvees = null;
+            this.motsTrouvees = new List<string>();
             this.score = 0;
 
         }
         public string Nom
         {
             get { return nom; }
-            set { nom = value; }
         }
         public int Score
         {
@@ -71,7 +66,37 @@ namespace ProjetA2AlexandreAlbin
 
         public string toString() // Faire l'affichage de la fct !!!
         {
-            return nom;
+            string contener = "";
+            contener += "\n\nLe joueur " + Nom + " a actuellement trouvé les mots : ";
+            if (MotsTrouvees != null)
+            {
+                foreach (string mot in MotsTrouvees)
+                {
+                    contener += mot + ' ';
+                }
+            }
+            contener +="\nEt " + Nom + " a actuellement " + score + " points!!";
+            return contener;
+        }
+
+
+        public void UpdateScore(string word)
+        {
+            word = word.ToUpper();
+            int count = 0;
+            foreach(char lettre in word)
+            {
+                for (int i = 0; i < LetterInformations.Lettres.Length; i++)
+                {
+                    if (LetterInformations.Lettres[i].Letter == lettre)
+                    {
+                        count += LetterInformations.Lettres[i].Poids;
+                        
+                    }
+                }
+            }
+            score += count;
+            
         }
     }
 }

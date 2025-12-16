@@ -31,6 +31,8 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
+        
+
         public static string MotValide()
         {
             string mot;
