@@ -31,31 +31,90 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
-        
+
 
         public static string MotValide()
         {
-            string mot;
-            do
+            string mot = "";
+            while (true)
             {
-                Console.WriteLine("Entrez un mot :");
-                mot = Console.ReadLine();
-            } while (string.IsNullOrWhiteSpace(mot));
+                // On lit la touche sans l'afficher immédiatement (.KeyChar fera l'affichage manuel)
+                ConsoleKeyInfo info = Console.ReadKey(true);
 
-            return mot;
+                // CAS 1 : Menu de Pause
+                if (info.Key == ConsoleKey.Escape)
+                {
+                    Interface.AfficherMenuPause();
+                    // On réaffiche ce qui était déjà écrit pour ne pas perdre l'utilisateur
+                    Console.Clear();
+                    Console.WriteLine("Reprise de la saisie...");
+                    Console.Write("Entrez un mot : " + mot);
+                    continue;
+                }
+
+                // CAS 2 : Validation
+                if (info.Key == ConsoleKey.Enter)
+                {
+                    if (!string.IsNullOrWhiteSpace(mot))
+                    {
+                        Console.WriteLine();
+                        return mot;
+                    }
+                }
+
+                // CAS 3 : Effacer (Backspace)
+                if (info.Key == ConsoleKey.Backspace && mot.Length > 0)
+                {
+                    mot = mot.Substring(0, mot.Length - 1);
+                    Console.Write("\b \b"); // Efface visuellement le caractère
+                }
+                // CAS 4 : Caractère classique
+                else if (!char.IsControl(info.KeyChar))
+                {
+                    mot += info.KeyChar;
+                    Console.Write(info.KeyChar);
+                }
+            }
         }
 
         public static int ChiffreValide()
         {
-            int nombre;
-            do
+            string saisie = "";
+            while (true)
             {
-                Console.WriteLine("Entrez un chiffre :");
-            } while (!int.TryParse(Console.ReadLine(), out nombre));
+                ConsoleKeyInfo info = Console.ReadKey(true);
 
-            return nombre;
+                if (info.Key == ConsoleKey.Escape)
+                {
+                    Interface.AfficherMenuPause();
+                    Console.Clear();
+                    Console.WriteLine("Reprise de la saisie...");
+                    Console.Write("Entrez un chiffre : " + saisie);
+                    continue;
+                }
+
+                if (info.Key == ConsoleKey.Enter)
+                {
+                    if (int.TryParse(saisie, out int nombre))
+                    {
+                        Console.WriteLine();
+                        return nombre;
+                    }
+                }
+
+                if (info.Key == ConsoleKey.Backspace && saisie.Length > 0)
+                {
+                    saisie = saisie.Substring(0, saisie.Length - 1);
+                    Console.Write("\b \b");
+                }
+                // On n'accepte que les chiffres
+                else if (char.IsDigit(info.KeyChar))
+                {
+                    saisie += info.KeyChar;
+                    Console.Write(info.KeyChar);
+                }
+            }
         }
-
 
     }
 }

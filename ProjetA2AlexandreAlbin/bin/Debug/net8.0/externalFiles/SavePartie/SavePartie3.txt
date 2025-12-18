@@ -1,0 +1,71 @@
+L F D J Q N G M 
+X B V L P C J A 
+H U N R B R K F 
+U C L M V A W E 
+T U D N E U D B 
+P K W T Y F X G 
+L D D A P S N N 
+
+
+albin doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+albin doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+louis doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+albin doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+louis doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+albin doit jouerL F       N G M 
+X B D   Q C J A 
+H U V J P R K F 
+U C N L B A W E 
+T U L R V U D B 
+P K D M Y F X G 
+L D W N P S N N 
+
+
+louis doit jouer
+
+
+
+Le joueur albin a actuellement trouvé les mots : date 
+Et albin a actuellement 9 points!!
+
+System.Func`1[System.String]

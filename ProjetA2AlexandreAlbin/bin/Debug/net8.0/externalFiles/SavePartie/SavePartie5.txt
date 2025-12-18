@@ -1,0 +1,57 @@
+L F D J Q N G M X B V L 
+P C J A H U N R B R K F 
+U C L M V A W E T U D N 
+E U D B P K W T Y F X G 
+L D D A P S N N B S C C 
+
+
+loulou doit jouerL F D J Q N G     B V L 
+P C J A H U N M   R K F 
+U C L M V A W R   U D N 
+E U D B P K W T X F X G 
+L D D A P S N N B S C C 
+
+
+loulou doit jouer  F D J Q N G     B V L 
+  C J A H U N M   R K F 
+L C L M V A W R   U D N 
+P U D B P K W T X F X G 
+U D D A P S N N B S C C 
+
+
+albinos doit jouer  F     Q N G     B V L 
+  C D   H U N M   R K F 
+L C J J V A W R   U D N 
+P U L A P K W T X F X G 
+U D D M P S N N B S C C 
+
+
+loulou doit jouer  F         G     B V L 
+  C D     N N M   R K F 
+L C J   Q U W R   U D N 
+P U L J H K W T X F X G 
+U D D M V S N N B S C C 
+
+
+albinos doit jouer            G     B V L 
+    D     N N M   R K F 
+L   J   Q U W R   U D N 
+P F L J H K W T X F X G 
+U C D M V S N N B S C C 
+
+
+loulou doit jouer            G     B V L 
+    D     N N M   R K F 
+L   J   Q U W R   U D N 
+P F L J H K W T X F X G 
+U C D M V S N N B S C C 
+
+
+albinos doit jouer
+
+
+
+Le joueur loulou a actuellement trouvé les mots : byte dab duc 
+Et loulou a actuellement 37 points!!
+
+System.Func`1[System.String]

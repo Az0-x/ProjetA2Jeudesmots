@@ -65,58 +65,6 @@ namespace ProjetA2AlexandreAlbin
             etatPartie.Add(EtatActuellePartie(true));
         }
 
-        /*
-        public void Coups_Joueur(char[,] tab)// Faire une alternace afin cahger de joueur entre le 1 et le 2 !!!
-        {
-            Console.WriteLine("Veuillez saisir le temps total de la partie en minutes");
-            int delta_temps_game = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Veuillez saisir le temps intermédiaire pour chaque joueur en seconde");
-            int delta_temps_player = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
-            Console.WriteLine("Récapitulatif des temps : ");
-            Console.WriteLine("temps partie : " + delta_temps_game + " min // temps joueur : " + delta_temps_player + " sec");
-            Console.WriteLine("Appuyer sur entrée pour aller à l'étape suivante");
-            Console.ReadKey();
-            DateTime date_a1_game = DateTime.UtcNow;
-            DateTime date_a2_game = DateTime.UtcNow;
-            DateTime ecart_a_game = date_a2_game.AddMinutes(delta_temps_game);
-            TimeSpan tempsj1_game = ecart_a_game - date_a1_game;
-            DateTime date_a1_player = DateTime.UtcNow;
-            DateTime date_a2_player = DateTime.UtcNow;
-            DateTime ecart_a_player = date_a2_player.AddSeconds(delta_temps_player);
-            TimeSpan tempsj1_player = ecart_a_player - date_a1_player;
-            bool etat = true;
-
-
-
-            while (tempsj1_game.Minutes > 0 || tempsj1_game.Seconds > 0 || etat != false)
-            {
-                while (tempsj1_player.Seconds > 0)
-                {
-                    //ici on incrémente les secondes de la 1ere date d'autant de secondes qu'il s'est écoulé pendant le passage de la boucle
-                    //Ensuite on fait la différence des 2 dates qui se décrémente donc en temps réel
-                    DateTime increment_a_game = date_a1_game.AddSeconds((DateTime.UtcNow - date_a1_game).TotalSeconds);
-                    tempsj1_game = ecart_a_game - increment_a_game;
-                    Console.WriteLine(tempsj1_game);
-                    DateTime increment_a_player = date_a1_player.AddSeconds((DateTime.UtcNow - date_a1_player).TotalSeconds);
-                    tempsj1_player = ecart_a_player - increment_a_player;
-                    Console.WriteLine(tempsj1_player);
-                    TimeSpan tempsj1_game_new = tempsj1_game;
-
-                    // ici on fait les coups, il faut :
-                    // alternance joueur 1, joueur 2 (si possible pas duppliqué)
-                    // def dans plateau : coups valides + drop des lettres
-
-                    etat = EtatJeu(tab);
-                    Console.Clear();
-                }
-            }
-        }
-        */
-        
-        
-        
-
         public bool EtatJeu()  //return true si la partie n'est pas terminer
         {
             bool verif = true;
@@ -140,6 +88,33 @@ namespace ProjetA2AlexandreAlbin
             else return map + "\n\n" + j2.Nom + " doit jouer";
 
         }
+
+        public void EtatGrille(bool player)
+        {
+            
+
+            int nbr = 1;
+            string path = Path.Combine("externalFiles", "PlateauTest", "Save", "Plateau" + nbr + ".txt");
+            while (File.Exists(path))
+            {
+                nbr++;
+                path = Path.Combine("externalFiles", "PlateauTest", "Save", "Plateau" + nbr + ".txt");
+            }
+            string Grille = "";
+            int ligne = map.Matrice.GetLength(0);
+            int colonne = map.Matrice.GetLength(1);
+            for (int i = 0; i < ligne; i++)
+            {
+                for (int j = 0; j < colonne; j++)
+                {
+                    Grille += map.Matrice[i, j] + ',';
+                }
+                Grille += "\n";
+            }
+            File.WriteAllText(path, Grille);
+        }
+
+
         public void SaveEtatPartie()
         {
             int nbr = 1;
@@ -154,7 +129,8 @@ namespace ProjetA2AlexandreAlbin
             {
                 Partie += round;
             }
-            Partie += "\n\n" + j1.toString() + "\n\n" + j2.toString;
+            Partie += j1.toString();
+            Partie += j2.toString();
             File.WriteAllText(path, Partie);
         }
         public void Round()
@@ -235,6 +211,29 @@ namespace ProjetA2AlexandreAlbin
 
             }
             etatPartie.Add(EtatActuellePartie(false));
+        }
+
+        public static void AfficherMenuPause()
+        {
+            // On sauvegarde l'ancienne vue ou on prévient l'utilisateur
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("=== PAUSE ===");
+            Console.ResetColor();
+            Console.WriteLine("1. Reprendre la partie");
+            Console.WriteLine("2. Quitter le jeu");
+
+            string choix = Console.ReadLine();
+
+            if (choix == "2")
+            {
+                Environment.Exit(0); // Quitte proprement le programme
+            }
+
+            // Si l'utilisateur choisit 1 ou autre, la fonction se termine.
+            // Le programme "retombe" dans la boucle de saisie de MotValide().
+            Console.Clear();
+            Console.WriteLine("Reprise de la saisie...");
         }
     }
 }

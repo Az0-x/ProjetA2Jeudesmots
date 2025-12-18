@@ -1,0 +1,68 @@
+L F D J Q N G M X B 
+V L P C J A H U N R 
+B R K F U C L M V A 
+W E T U D N E U D B 
+P K W T Y F X G L D 
+D A P S N N B S C C 
+B Y H H F D K G M K 
+M G S D E B I B I M 
+I T R Q D D H M R Q 
+O M D Q M S H R S S 
+
+
+loulou doit jouer    D J Q N G M X B 
+L   P C J A H U N R 
+V F K F U C L M V A 
+B L T U D N E U D B 
+W R W T Y F X G L D 
+P E P S N N B S C C 
+D K H H F D K G M K 
+B A S D E B I B I M 
+M Y R Q D D H M R Q 
+I G D Q M S H R S S 
+
+
+loulou doit jouer    D J Q N G M X B 
+L   P C J A H U N R 
+V F K F U C L M V A 
+B L T U D N E U D B 
+W R W T Y F X G L D 
+P E P S N N B S C C 
+D K H H F D K G M K 
+B A S D E B I B I M 
+M Y R Q D D H M R Q 
+I G D Q M S H R S S 
+
+
+alinos doit jouer    D J Q N G M X B 
+L   P C J A H U N R 
+V F K F U C L M V A 
+B L T U D N E U D B 
+W R W T Y F X G L D 
+P E P S N N B S C C 
+D K H H F D K G M K 
+B A S D E B I B I M 
+M Y R Q D D H M R Q 
+I G D Q M S H R S S 
+
+
+loulou doit jouer    D J Q N G M X B 
+L   P C J A H U N R 
+V F K F U C L M V A 
+B L T U D N E U D B 
+W R W T Y F X G L D 
+P E P S N N B S C C 
+D K H H F D K G M K 
+B A S D E B I B I M 
+M Y R Q D D H M R Q 
+I G D Q M S H R S S 
+
+
+alinos doit jouer
+
+
+
+Le joueur loulou a actuellement trouvé les mots : mot 
+Et loulou a actuellement 7 points!!
+
+System.Func`1[System.String]
