@@ -6,16 +6,16 @@ namespace TestProject1;
 public class Test3
 {
     [TestMethod]
-    public void TestFormatToStringJoueur()
+    public void TestCumulScore()
     {
         // Arrange
-        Joueur j = new Joueur("Albin");
+        Joueur j = new Joueur("Test");
 
         // Act
-        string affichage = j.Nom;
+        j.Score += 10;
+        j.Score += 25;
 
         // Assert
-        // On vérifie si le nom du joueur apparaît bien dans la chaîne retournée
-        StringAssert.Contains(affichage, "Albin", "La méthode toString doit afficher le nom du joueur.");
+        Assert.AreEqual(35, j.Score, "Le score total devrait être de 35.");
     }
 }

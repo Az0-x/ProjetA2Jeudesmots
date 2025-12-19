@@ -13,7 +13,7 @@ namespace TestProject1
             Joueur j = new Joueur("Test");
 
             // Act
-            j.Score += 10; // Supposons que ta méthode s'appelle AddScore
+            j.Score += 10; 
             j.Score += 25;
 
             // Assert

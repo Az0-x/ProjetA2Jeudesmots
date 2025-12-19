@@ -1,0 +1,10 @@
+ALL RIGHTS RESERVED © 2024-2026
+
+The source code, graphic design, algorithms, and all elements constituting this software ("ProjetA2Jeudesmots") are the exclusive intellectual property of:
+
+1. Alexandre HOUARD
+2. Albin HUBERT
+
+Any reproduction, distribution, modification, or use of this project, in whole or in part, without the explicit written permission of the aforementioned authors is strictly prohibited.
+
+This project is provided for educational and demonstration purposes only within the scope of its academic evaluation. Any commercial use is prohibited.
