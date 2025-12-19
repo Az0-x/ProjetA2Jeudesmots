@@ -10,6 +10,12 @@ namespace ProjetA2AlexandreAlbin
     internal class Methode
     {
 
+
+        /// <summary>
+        /// Affichage de la matrice qu'importe le type en entrant tant que c'est une matrice avec l'utilisation de <>
+        /// </summary>
+        /// <typeparam name="Tableauquelquonque"></typeparam>
+        /// <param name="matrice"></param>
         public static void AfficherMatrice<Tableauquelquonque>(Tableauquelquonque[,] matrice)  //on affiche la matrice
         {
             if (matrice == null) { Console.Write("(null)"); }
@@ -32,7 +38,10 @@ namespace ProjetA2AlexandreAlbin
 
 
 
-
+        /// <summary>
+        /// Demande un mots et vérifie si il est valide et complets, et si il est différent de ESC
+        /// </summary>
+        /// <returns></returns>
         public static string MotValide()
         {
             string mot = "";
@@ -74,6 +83,11 @@ namespace ProjetA2AlexandreAlbin
             }
         }
 
+
+        /// <summary>
+        /// Demande un mot ( sous forme de key ) et on regarde si c'est un nombre
+        /// </summary>
+        /// <returns></returns>
         public static int ChiffreValide()
         {
             string saisie = "";

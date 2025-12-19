@@ -7,7 +7,7 @@ using System.IO;
 
 namespace ProjetA2AlexandreAlbin
 {
-    internal struct LetterInformations
+    public struct LetterInformations
     {
         #region def de la classe
 
@@ -31,10 +31,16 @@ namespace ProjetA2AlexandreAlbin
         #endregion
 
 
-
         //On peut faire soit un tab ( il y a 26 lettres donc fixe ou une Liste, le choix dépend de la tournure du jeux si on veut ajouter des caractéres ou autres )
+        
+        
         private static string path = Path.Combine("externalFiles", "Lettre.txt"); // Path combine sert a créer le chemin d'acces parfais malgres Linux/ Windows ( Comme on peut avoir plusieur systeme d'exploitation )
         
+
+        /// <summary>
+        /// Utiliser pour la fonction test, et aussi lors de la création du jeu
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return Letter + "," + Occurence + "," + Poids;
@@ -72,6 +78,10 @@ namespace ProjetA2AlexandreAlbin
 
 
         #region Création de la tab Lettres
+
+        /// <summary>
+        /// Création d'un tablleau de valeurs Struct incluant la lettre, l'occurence, et le poid
+        /// </summary>
         public static LetterInformations[] Lettres = new LetterInformations[26];
         public static void creationTab()
         {
@@ -94,7 +104,6 @@ namespace ProjetA2AlexandreAlbin
             }
             else Console.WriteLine("No path");
         }
-
         #endregion
         
     }

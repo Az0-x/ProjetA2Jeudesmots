@@ -11,7 +11,7 @@ namespace Projet_A2_S1
     {
 
         #region Initialisation de la classe
-        // Chemins des fichiers
+        // Chemins des fichiers + intitialisation variable (pathCombien pour linux et winfows)
         private static string path = "externalFiles";
         private static string pathmotsfrancais = Path.Combine(path, "Mots_Français.txt");
         private static string pathdicojson = Path.Combine(path, "Dictionary.json");
@@ -19,6 +19,8 @@ namespace Projet_A2_S1
        
         private List<string>[] dict;
 
+
+        //Propriétés
         public List<string>[] Dict
         {
             get { return dict; }
@@ -27,12 +29,12 @@ namespace Projet_A2_S1
 
 
         /// <summary>
-        /// La fonction présente regarde si un fichier json existe et est bon, et créer ainsi Dict un tab de 26 colonne de liste
+        /// La fonction présente regarde si un fichier json existe et est bon, et créer ainsi Dict un tab de 26 colonne de liste / Constructeur du Dictionnaire
         /// </summary>
         public Dictionnaire()
         {
             
-            // Comparaison des dates pour savoir s'il faut charger le JSON ou reconstruire
+            // Comparaison des dates pour savoir s'il faut charger le JSON ou reconstruire  ( Construit a partir du json ou refais le trie et recrée le dico de 0)
             if (File.Exists(pathdicojson) && IsJsonUpToDate())
             {
                 LoadFromJson();
@@ -71,12 +73,12 @@ namespace Projet_A2_S1
             using (StreamReader sr = new StreamReader(pathdicojson))
             {
                 string json = sr.ReadToEnd();
-                Dict = JsonSerializer.Deserialize<List<string>[]>(json);
+                Dict = JsonSerializer.Deserialize<List<string>[]>(json);      //Méthode qui récupérer le json et le met directement dans une tab de liste
             }
         }
 
         /// <summary>
-        /// Sauvegarde en JSON.
+        /// Sauvegarde en JSON. ( quand le dictionnaire a été trié )
         /// </summary>
         private void SerializeDictionary()
         {
@@ -156,6 +158,13 @@ namespace Projet_A2_S1
 
         //  Algorithmes 
 
+
+        /// <summary>
+        /// Effectue une recherche dichotomique (binaire) récursive pour vérifier si un mot existe dans une liste triée.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private bool DichotomicSearch(string word, List<string> list)
         {
             if (list == null || list.Count == 0) return false;
@@ -171,6 +180,12 @@ namespace Projet_A2_S1
                 return DichotomicSearch(word, list.GetRange(middle + 1, list.Count - middle - 1));
         }
 
+
+        /// <summary>
+        /// Trie une liste de chaînes de caractères par ordre alphabétique en utilisant l'algorithme du Tri Fusion (Merge Sort).
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         private List<string> MergeSort(List<string> list)
         {
             if (list.Count <= 1) return list;
@@ -182,6 +197,13 @@ namespace Projet_A2_S1
             return Merge(left, right);
         }
 
+
+        /// <summary>
+        /// Fusionne deux listes triées en une seule liste triée de manière stable.
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         private List<string> Merge(List<string> left, List<string> right)
         {
             var result = new List<string>();
@@ -267,6 +289,13 @@ namespace Projet_A2_S1
             return s.Length > 0 ? s[0] : c;
         }
 
+
+        /// <summary>
+        /// Retourne en String le dictionnaire, utilisé pour des tests, il n'est pas utilisé ici
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        /*
         public override string ToString()
         {
             string str = "--- Contenu du Dictionnaire (Tableau) ---\n";
@@ -280,7 +309,11 @@ namespace Projet_A2_S1
             }
             return str;
         }
-
+        
+        /// <summary>
+        /// Affiche dans la console le dictionnaire, utilisé pour des tests, il n'est pas utile ici
+        /// </summary>
+        /// <returns></returns>
         public void AfficheDico()
         {
             Console.WriteLine("--- Contenu du Dictionnaire (Tableau) ---\n");
@@ -293,7 +326,7 @@ namespace Projet_A2_S1
                 Console.WriteLine();
             }
         }
-
+        */
 
 
         #endregion

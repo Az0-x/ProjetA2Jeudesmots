@@ -13,11 +13,13 @@ namespace ProjetA2AlexandreAlbin
     public class Plateau
     {
        
-        
+        //Attributs
         char[,] matrice;
         int lignes;
         int colones;
 
+
+        //Propriétés
         public char[,] Matrice
         {
             get { return matrice; }
@@ -31,14 +33,13 @@ namespace ProjetA2AlexandreAlbin
             get { return colones; }
         }
 
+
+        //Constructeurs
         public Plateau(int ligne, int colone)
         {
             this.lignes = ligne;
             this.colones = colone;
             this.matrice = tableau(ligne, colone);
-            //On créer le tableau pour le mettre directement dans le constructeur
-
-            
         }
 
         public Plateau(string path)
@@ -46,11 +47,17 @@ namespace ProjetA2AlexandreAlbin
             this.lignes = ChargerPlateau(path).ligne;
             this.colones = ChargerPlateau(path).colonne;
             this.matrice = ChargerPlateau(path).tab;
-            //On créer le tableau pour le mettre directement dans le constructeur
-
+            
         }
 
 
+
+        /// <summary>
+        /// Création d'un tableau aléatoire en fonction du nombre de ligne, colonne, et l'occurence des lettres
+        /// </summary>
+        /// <param name="ligne"></param>
+        /// <param name="colone"></param>
+        /// <returns></returns>
         private char[,] tableau(int ligne, int colone)
         {
             char[,] mat = null;
@@ -85,15 +92,11 @@ namespace ProjetA2AlexandreAlbin
             return mat;
         }
 
-
-        // Je dois saisir les lignes et les colones !!!
-
-        //public string toString()
-        //{
-        //    // Retourne le plateau en formant entier 
-        //}
-
-
+        /// <summary>
+        /// Rehcherche si le mots entrée en paramétre est dans le tableau (il regarde dans un premeir temps le premier caractere, puis ensuite appellle une autre fonctions qui ll'as regarde apres toutes les lettre adjoints
+        /// </summary>
+        /// <param name="mot"></param>
+        /// <returns></returns>
         public (bool verif, int[,] Valeurs) Recherche_Mot(string mot)
         {
             if (string.IsNullOrWhiteSpace(mot) || matrice == null)
@@ -167,7 +170,6 @@ namespace ProjetA2AlexandreAlbin
             int jmin = Math.Max(0, indextab2 - 1);
             int jmax = Math.Min(colonne - 1, indextab2 + 1);
 
-            //  BOUCLE SUR LES VOISINS 
             for (int i = imin; i <= imax; i++)
             {
                 for (int j = jmin; j <= jmax; j++)
@@ -208,6 +210,14 @@ namespace ProjetA2AlexandreAlbin
             return (false, Valeurs);
         }
 
+
+        /// <summary>
+        /// Regarde si l'indice entrée en parametre, est un indice correspondant au mot
+        /// </summary>
+        /// <param name="i1"></param>
+        /// <param name="i2"></param>
+        /// <param name="val"></param>
+        /// <returns></returns>
         public bool indicedanstab(int i1, int i2, int[,] val)
         {
             if (val == null)
@@ -233,7 +243,11 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
-
+        /// <summary>
+        /// Charge un plateau en fonction du chemin d'accés
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static (int ligne, int colonne, char[,] tab) ChargerPlateau(string path)
         {
             (int ligne, int colonne, char[,] tab) final = (0, 0, null); 
@@ -274,7 +288,7 @@ namespace ProjetA2AlexandreAlbin
 
 
         /// <summary>
-        /// Mettre a jour le tableau
+        /// Mettre a jour le tableau (enleves les lettres, et les faits tombers
         /// </summary>
         public void Maj_Plateau(Plateau map, string mot, Dictionnaire dico)
         {
@@ -328,6 +342,12 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
+
+
+        /// <summary>
+        /// Utilisation lors de précédents test, pour retourner un string correspondant a la matrice
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()  //on affiche la matrice
         {
             string mat ="";

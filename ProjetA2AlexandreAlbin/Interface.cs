@@ -12,6 +12,7 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Interface
     {
+        //Création d'un Jeu static accésssible partout
         private static Jeu currentGame;
 
         #region Helpers pour l'esthétique
@@ -28,6 +29,7 @@ namespace ProjetA2AlexandreAlbin
         #endregion
 
         #region Interface du jeu :
+
 
         public static void PageAcceuil()
         {

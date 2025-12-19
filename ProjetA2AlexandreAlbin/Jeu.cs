@@ -11,6 +11,8 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Jeu
     {
+        #region Attributs de la classe
+        //Atributs
         private Dictionnaire dico;
         private Joueur j1;
         private Joueur j2;
@@ -20,7 +22,7 @@ namespace ProjetA2AlexandreAlbin
         private DateTime finTour;
 
 
-
+        //Propriété
         public Plateau Map
         {
             get { return map; }
@@ -51,7 +53,7 @@ namespace ProjetA2AlexandreAlbin
             set { j2 = value; }
         }
 
-
+        //Constructeurs
         public Jeu(Dictionnaire dico, Joueur joueur1, Joueur joueur2, Plateau map) //Rajouter l'indice pour changer la valeur de la fin de la partie
         {
             this.dico = dico;
@@ -65,6 +67,15 @@ namespace ProjetA2AlexandreAlbin
             etatPartie.Add(EtatActuellePartie(true));
         }
 
+
+
+        #endregion
+
+
+        /// <summary>
+        /// Définits si la partie est terminer en fonction du temps
+        /// </summary>
+        /// <returns></returns>
         public bool EtatJeu()  //return true si la partie n'est pas terminer
         {
             bool verif = true;
@@ -78,7 +89,11 @@ namespace ProjetA2AlexandreAlbin
 
 
 
-
+        /// <summary>
+        /// Utiliser pour l'historique de la partie, return en string la personne que doit jouer
+        /// </summary>
+        /// <param name="player"></param>
+        /// <returns></returns>
         public string EtatActuellePartie(bool player)
         {
             if (player)
@@ -89,6 +104,10 @@ namespace ProjetA2AlexandreAlbin
 
         }
 
+
+        /// <summary>
+        /// Utilisation pour sauvegarder la grille présente de la partie dans externalFiles/PlateauTest/Save
+        /// </summary>
         public void ToFile()
         {
             int nbr = 1;
@@ -125,6 +144,9 @@ namespace ProjetA2AlexandreAlbin
         }
 
 
+        /// <summary>
+        /// Save la partie entiere en forme d'historique 
+        /// </summary>
         public void SaveEtatPartie()
         {
             int nbr = 1;
@@ -143,6 +165,11 @@ namespace ProjetA2AlexandreAlbin
             Partie += j2.toString();
             File.WriteAllText(path, Partie);
         }
+
+
+        /// <summary>
+        /// Définis les actions du joueurs 1 a faire dans la partie, il dois ecrire le mot, puis update dans le plateau de ce mot
+        /// </summary>
         public void Round()
         {
             Console.Clear();
@@ -184,6 +211,10 @@ namespace ProjetA2AlexandreAlbin
             RoundJ2();
         }
 
+
+        /// <summary>
+        /// Définis les actions du joueurs 2 a faire dans la partie, il dois ecrire le mot, puis update dans le plateau de ce mot, Actions juste Aprés celle du joueurs 1
+        /// </summary>
         private void RoundJ2()
         {
             Console.Clear();
@@ -222,16 +253,5 @@ namespace ProjetA2AlexandreAlbin
             }
             etatPartie.Add(EtatActuellePartie(false));
         }
-
-        private static Jeu currentGame;
-        private static void Partie(Jeu game)
-        {
-            currentGame = game;
-            while (game.EtatJeu())
-            {
-                game.Round();
-            }
-        }
-
     }
 }
