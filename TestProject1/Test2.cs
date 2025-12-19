@@ -1,0 +1,23 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Projet_A2_S1;
+using ProjetA2AlexandreAlbin; 
+namespace TestProject1
+{
+    [TestClass]
+    public class Test2
+    {
+        [TestMethod]
+        public void TestCumulScore()
+        {
+            // Arrange
+            Joueur j = new Joueur("Test");
+
+            // Act
+            j.Score += 10; // Supposons que ta méthode s'appelle AddScore
+            j.Score += 25;
+
+            // Assert
+            Assert.AreEqual(35, j.Score, "Le score total devrait être de 35.");
+        }
+    }
+}

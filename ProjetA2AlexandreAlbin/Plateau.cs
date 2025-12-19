@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProjetA2AlexandreAlbin
 {
-    internal class Plateau
+    public class Plateau
     {
        
         
@@ -50,39 +50,39 @@ namespace ProjetA2AlexandreAlbin
 
         }
 
-        
+
         private char[,] tableau(int ligne, int colone)
         {
             char[,] mat = null;
             if (ligne != 0 && colone != 0)
             {
-                Random r = new Random(32);
-                int dim = ligne * colone;
+                Random r = new Random();
                 mat = new char[ligne, colone];
-                bool verif;
+
                 for (int i = 0; i < ligne; i++)
                 {
                     for (int j = 0; j < colone; j++)
                     {
-                        verif = false;
+                        bool verif = false;
                         while (!verif)
                         {
-                            int a = r.Next(1, 26);
                             
-                            if (LetterInformations.Lettres[a].Count <= LetterInformations.Lettres[a].Occurence)
+                            int a = r.Next(0, 26);
+
+                            
+                            if (LetterInformations.Lettres[a].Count < LetterInformations.Lettres[a].Occurence)
                             {
-                                mat[i, j] = Convert.ToChar(a + 64);
+                                
+                                mat[i, j] = LetterInformations.Lettres[a].Letter;
+
                                 LetterInformations.Lettres[a].Count++;
-                                verif = true; ;
+                                verif = true;
                             }
-                            
                         }
                     }
                 }
-                
             }
             return mat;
-
         }
 
 

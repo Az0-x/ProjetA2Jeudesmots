@@ -45,10 +45,7 @@ namespace ProjetA2AlexandreAlbin
                 if (info.Key == ConsoleKey.Escape)
                 {
                     Interface.AfficherMenuPause();
-                    // On réaffiche ce qui était déjà écrit pour ne pas perdre l'utilisateur
-                    Console.Clear();
-                    Console.WriteLine("Reprise de la saisie...");
-                    Console.Write("Entrez un mot : " + mot);
+                    Console.Write("\n> Reprise : " + mot);
                     continue;
                 }
 

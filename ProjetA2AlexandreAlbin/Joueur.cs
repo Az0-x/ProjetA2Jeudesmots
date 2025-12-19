@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetA2AlexandreAlbin
 {
-    internal class Joueur
+    public class Joueur
     {
         string nom;
         List<string> motsTrouvees;

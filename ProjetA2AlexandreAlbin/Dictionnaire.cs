@@ -71,14 +71,9 @@ namespace Projet_A2_S1
             using (StreamReader sr = new StreamReader(pathdicojson))
             {
                 string json = sr.ReadToEnd();
-                // Désérialisation directe en tableau de listes (tente de convertir tes données, et elle protège ton programme si ça échoue.)
-                Dict = JsonSerializer.Deserialize<List<string>[]>(json)
-                       ?? throw new Exception("Erreur désérialisation");
+                Dict = JsonSerializer.Deserialize<List<string>[]>(json);
             }
         }
-
-
-        
 
         /// <summary>
         /// Sauvegarde en JSON.
@@ -242,7 +237,8 @@ namespace Projet_A2_S1
         /// </summary>
         public bool FindWord(string word)
         {
-            if (string.IsNullOrWhiteSpace(word)) return false;
+            bool verif = false;
+            if (string.IsNullOrWhiteSpace(word)) verif = false;
 
             char firstChar = RemoveDiacritics(word[0]);
             int index = GetIndexFromChar(firstChar);
@@ -251,11 +247,13 @@ namespace Projet_A2_S1
             if (index < 0 || index >= 26)
             {
                 Console.WriteLine($"Caractère '{word[0]}' non supporté.");
-                return false;
+                verif = false;
             }
 
+
+            verif = DichotomicSearch(word.Trim(), Dict[index]);
             // On lance la recherche dichotomique uniquement dans la bonne liste
-            return DichotomicSearch(word.Trim(), Dict[index]);
+            return verif;
         }
 
         /// <summary>

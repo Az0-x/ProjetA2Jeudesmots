@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +12,19 @@ namespace ProjetA2AlexandreAlbin
 {
     internal class Interface
     {
+        private static Jeu currentGame;
+
         #region Helpers pour l'esthétique
-        // Petite méthode pour dessiner des lignes de séparation
-        private static void DessinerLigne() => Console.WriteLine("╔" + new string('═', 66) + "╗");
-        private static void DessinerFin() => Console.WriteLine("╚" + new string('═', 66) + "╝");
+
+        // Méthode simple pour les titres avec des tirets
+        private static void AfficherTitre(string titre)
+        {
+            string ligne = new string('-', 50);
+            Console.WriteLine(ligne);
+            Console.WriteLine("   " + titre); 
+            Console.WriteLine(ligne);
+        }
+
         #endregion
 
         #region Interface du jeu :
@@ -21,13 +32,9 @@ namespace ProjetA2AlexandreAlbin
         public static void PageAcceuil()
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            DessinerLigne();
-            Console.WriteLine("║                BIENVENUE DANS LE JEU DES MOTS !!                 ║");
-            DessinerFin();
-            Console.ResetColor();
+            AfficherTitre("BIENVENUE DANS LE JEU DES MOTS !!");
 
-            Console.WriteLine("\n\n    [ RÉGLLES DU JEU ]");
+            Console.WriteLine("\n\n    [ RÈGLES DU JEU ]");
             Console.WriteLine("    - Trouvez un maximum de mots dans la grille.");
             Console.WriteLine("    - Les mots doivent être présents dans le dictionnaire.");
             Console.WriteLine("    - Chaque lettre a une valeur en points.");
@@ -43,11 +50,7 @@ namespace ProjetA2AlexandreAlbin
             Plateau map;
             string path;
 
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            DessinerLigne();
-            Console.WriteLine("║                CONFIGURATION DE LA GRILLE DE JEU                ║");
-            DessinerFin();
-            Console.ResetColor();
+            AfficherTitre("CONFIGURATION DE LA GRILLE DE JEU");
 
             Console.WriteLine("\n    1.  Charger une grille enregistrée");
             Console.WriteLine("    2.  Charger via un fichier externe (.txt)");
@@ -71,7 +74,7 @@ namespace ProjetA2AlexandreAlbin
                     Console.Clear();
                     Console.WriteLine(" > Quel plateau voulez-vous charger ? (de 1 à 7)");
                     int nbr = Methode.ChiffreValide();
-                    path = Path.Combine("externalFiles", "PlateauTest","Pregenerer","Plateau" + nbr + ".txt");
+                    path = Path.Combine("externalFiles", "PlateauTest", "Pregenerer", "Plateau" + nbr + ".txt");
                     map = new Plateau(path);
                     AfficherPlateau(map);
                     InitialisationDesJoueurs(map);
@@ -93,9 +96,7 @@ namespace ProjetA2AlexandreAlbin
 
         private static void AfficherPlateau(Plateau map)
         {
-            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("\n--- GRILLE GÉNÉRÉE ---\n");
-            Console.ResetColor();
             Console.WriteLine(map);
             Console.WriteLine("\nAppuyez sur une touche pour configurer les joueurs...");
             Console.ReadKey();
@@ -104,11 +105,7 @@ namespace ProjetA2AlexandreAlbin
         private static void InitialisationDesJoueurs(Plateau map)
         {
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            DessinerLigne();
-            Console.WriteLine("║                   INSCRIPTION DES JOUEURS                        ║");
-            DessinerFin();
-            Console.ResetColor();
+            AfficherTitre("INSCRIPTION DES JOUEURS");
 
             Console.Write("\n     Nom du Joueur 1 : ");
             string nom1 = Methode.MotValide();
@@ -120,40 +117,23 @@ namespace ProjetA2AlexandreAlbin
 
             Console.Clear();
             Console.WriteLine("\n     Joueurs enregistrés avec succès !");
-            Console.WriteLine($"    ------------------------------------------");
-            Console.WriteLine($"    P1: {j1.toString()} | P2: {j2.toString()}");
-            Console.WriteLine($"    ------------------------------------------");
+            Console.WriteLine("    ------------------------------------------");
+            Console.WriteLine("    P1: " + j1.toString() + " | P2: " + j2.toString());
+            Console.WriteLine("    ------------------------------------------");
 
             Console.WriteLine("\n    Appuyer sur [ENTRÉE] pour choisir la langue...");
             Console.ReadKey();
-            InitialisationDeLaLangue(j1, j2, map);
-        }
-
-        private static void InitialisationDeLaLangue(Joueur j1, Joueur j2, Plateau map)
-        {
-            Console.Clear();
-            Dictionnaire dico;
-            Jeu Game;
-
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            DessinerLigne();
-            Console.WriteLine("║                    CHOIX DE LA LANGUE                            ║");
-            DessinerFin();
-            Console.ResetColor();
-
-            Console.WriteLine("\n    1.  Français");
-            Console.WriteLine("    2.  Anglais (Beta)");
-            Console.Write("\n    Votre choix : ");
-
-            int var = Methode.ChiffreValide();
-
-            // Logique inchangée pour le dictionnaire
-            dico = new Dictionnaire();
-            Game = new Jeu(dico, j1, j2, map);
-
             
+
+            Dictionnaire dico = new Dictionnaire();
+            Jeu Game = new Jeu(dico, j1, j2, map);
+
+            currentGame = Game; // Ajout de cette ligne pour définir la partie en cours
+
             Partie(Game);
         }
+
+        
 
         private static void Partie(Jeu game)
         {
@@ -163,22 +143,20 @@ namespace ProjetA2AlexandreAlbin
             }
 
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Red;
-            DessinerLigne();
-            Console.WriteLine("║                   PARTIE TERMINÉE !                              ║");
-            DessinerFin();
-            Console.ResetColor();
+            AfficherTitre("PARTIE TERMINÉE !");
 
             Console.WriteLine("\n    --- TABLEAU DES SCORES ---");
+
+            // Remplacement des $ et {} par des +
             if (game.J1.Score > game.J2.Score)
             {
-                Console.WriteLine($"     VICTOIRE DE : {game.J1.Nom.ToUpper()} ({game.J1.Score} pts)");
-                Console.WriteLine($"     DEUXIÈME : {game.J2.Nom} ({game.J2.Score} pts)");
+                Console.WriteLine("     VICTOIRE DE : " + game.J1.Nom.ToUpper() + " (" + game.J1.Score + " pts)");
+                Console.WriteLine("     DEUXIÈME : " + game.J2.Nom + " (" + game.J2.Score + " pts)");
             }
             else if (game.J2.Score > game.J1.Score)
             {
-                Console.WriteLine($"     VICTOIRE DE : {game.J2.Nom.ToUpper()} ({game.J2.Score} pts)");
-                Console.WriteLine($"     DEUXIÈME : {game.J1.Nom} ({game.J1.Score} pts)");
+                Console.WriteLine("     VICTOIRE DE : " + game.J2.Nom.ToUpper() + " (" + game.J2.Score + " pts)");
+                Console.WriteLine("     DEUXIÈME : " + game.J1.Nom + " (" + game.J1.Score + " pts)");
             }
             else
             {
@@ -192,34 +170,49 @@ namespace ProjetA2AlexandreAlbin
 
         public static void AfficherMenuPause()
         {
-            // On sauvegarde l'ancienne vue ou on prévient l'utilisateur
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("=== PAUSE ===");
-            Console.ResetColor();
             Console.WriteLine("1. Reprendre la partie");
             Console.WriteLine("2. Relancer une partie");
-            Console.WriteLine("3. Sauvegarder la grille générer (si la partie a été initialisé");
-            Console.WriteLine("4. Quitter le jeu");
+            Console.WriteLine("3. Sauvegarder");
+            Console.WriteLine("4. Quitter");
 
-            string choix = Console.ReadLine();
+            // On utilise ReadKey pour éviter de bloquer l'input stream principal
+            var choix = Console.ReadKey(true).KeyChar;
 
-            if (choix == "3")
+            if (choix == '4') Environment.Exit(0);
+            else if (choix == '2') Interface.PageAcceuil();
+            else if (choix == '3')
             {
-                Environment.Exit(0); // Quitte proprement le programme
+                if (currentGame != null)
+                {
+                    currentGame.ToFile();
+                    Console.WriteLine("\nSauvegarde OK !");
+                    System.Threading.Thread.Sleep(1000); // Petite pause visuelle
+                    AfficherMenuPause(); // On relance le menu
+                }
             }
-            if(choix == "2")
+            else // (Choix 1 ou autre touche : on reprend)
             {
-                Program.Test4();
+                // C'EST ICI QUE LA MAGIE OPÈRE
+                Console.Clear(); // On efface le menu pause
+
+                if (currentGame != null)
+                {
+                    // 1. On redessine la grille
+                    Methode.AfficherMatrice(currentGame.Map.Matrice);
+
+                    // 2. On redessine les infos (Scores, tours...)
+                    Console.WriteLine("\n\nScore Actuel : J1 " + currentGame.J1.Score + " | J2 " + currentGame.J2.Score);
+
+                    // 3. On indique qui doit jouer pour redonner le contexte
+                    string joueurActuel = (currentGame.EtatPartie.Count % 2 == 0) ? currentGame.J2.Nom : currentGame.J1.Nom;
+                    Console.WriteLine("C'est au tour de : " + joueurActuel);
+                }
+
+                // Quand on sort d'ici, on retourne dans MotValide
+                // Et MotValide affichera juste la ligne "> Reprise : ..." en dessous de tout ça.
             }
-
-            //Rajouter grille
-
-
-            // Si l'utilisateur choisit 1 ou autre, la fonction se termine.
-            // Le programme "retombe" dans la boucle de saisie de MotValide().
-            Console.Clear();
-            Console.WriteLine("Reprise de la saisie...");
         }
 
         #endregion

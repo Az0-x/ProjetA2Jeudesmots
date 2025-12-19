@@ -89,29 +89,39 @@ namespace ProjetA2AlexandreAlbin
 
         }
 
-        public void EtatGrille(bool player)
+        public void ToFile()
         {
-            
-
             int nbr = 1;
-            string path = Path.Combine("externalFiles", "PlateauTest", "Save", "Plateau" + nbr + ".txt");
+            string dir = Path.Combine("externalFiles", "PlateauTest", "Save");
+            Directory.CreateDirectory(dir);
+
+            string path = Path.Combine(dir, "Plateau" + nbr + ".txt");
             while (File.Exists(path))
             {
                 nbr++;
-                path = Path.Combine("externalFiles", "PlateauTest", "Save", "Plateau" + nbr + ".txt");
+                path = Path.Combine(dir, "Plateau" + nbr + ".txt");
             }
-            string Grille = "";
+
+            var sb = new StringBuilder();
             int ligne = map.Matrice.GetLength(0);
             int colonne = map.Matrice.GetLength(1);
             for (int i = 0; i < ligne; i++)
             {
                 for (int j = 0; j < colonne; j++)
                 {
-                    Grille += map.Matrice[i, j] + ',';
+                    sb.Append(map.Matrice[i, j]);
+                    if (j < colonne - 1)
+                    {
+                        sb.Append(',');
+                    }
                 }
-                Grille += "\n";
+                if (i < ligne - 1)
+                {
+                    sb.AppendLine();
+                }
             }
-            File.WriteAllText(path, Grille);
+
+            File.WriteAllText(path, sb.ToString());
         }
 
 
@@ -213,27 +223,15 @@ namespace ProjetA2AlexandreAlbin
             etatPartie.Add(EtatActuellePartie(false));
         }
 
-        public static void AfficherMenuPause()
+        private static Jeu currentGame;
+        private static void Partie(Jeu game)
         {
-            // On sauvegarde l'ancienne vue ou on prévient l'utilisateur
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("=== PAUSE ===");
-            Console.ResetColor();
-            Console.WriteLine("1. Reprendre la partie");
-            Console.WriteLine("2. Quitter le jeu");
-
-            string choix = Console.ReadLine();
-
-            if (choix == "2")
+            currentGame = game;
+            while (game.EtatJeu())
             {
-                Environment.Exit(0); // Quitte proprement le programme
+                game.Round();
             }
-
-            // Si l'utilisateur choisit 1 ou autre, la fonction se termine.
-            // Le programme "retombe" dans la boucle de saisie de MotValide().
-            Console.Clear();
-            Console.WriteLine("Reprise de la saisie...");
         }
+
     }
 }
